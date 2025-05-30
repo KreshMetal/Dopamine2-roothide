@@ -108,10 +108,10 @@ int ptrace_hook(int request, pid_t pid, caddr_t addr, int data)
 	// processes that have tweak injection enabled will have their debug flags already set
 	// this is only relevant for ones that don't, e.g. if you disable tweak injection on an app via choicy
 	// but still want to be able to attach a debugger to them
-	if (r == 0 && (request == PT_ATTACHEXC || request == PT_ATTACH)) {
-		jbclient_platform_set_process_debugged(pid, true);
-		jbclient_platform_set_process_debugged(getpid(), true);
-	}
+	// if (r == 0 && (request == PT_ATTACHEXC || request == PT_ATTACH)) {
+	// 	jbclient_platform_set_process_debugged(pid, true);
+	// 	jbclient_platform_set_process_debugged(getpid(), true);
+	// }
 
 	return r;
 }

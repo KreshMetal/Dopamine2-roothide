@@ -14,8 +14,8 @@ void JBLogErrorFunction(const char *format, ...);
 char* JBLogGetLogFilePath(const char* logname, char* buffer);
 void JBLogFunction(const char* path, pid_t pid, uint64_t tid, const char* prefix, const char *format, ...);
 
-#define JBLogDebug(...) do { if(JBLOG_FORCE_LOG || JBLogEnabled()) JBLogDebugFunction(__VA_ARGS__); } while(0)
-#define JBLogError(...) do { if(JBLOG_FORCE_LOG || JBLogEnabled()) JBLogErrorFunction(__VA_ARGS__); } while(0)
+#define JBLogDebug(...) do { if(true) JBLogDebugFunction(__VA_ARGS__); } while(0)
+#define JBLogError(...) do { if(true) JBLogErrorFunction(__VA_ARGS__); } while(0)
 
 #else
 #define JBLogDebug(...)

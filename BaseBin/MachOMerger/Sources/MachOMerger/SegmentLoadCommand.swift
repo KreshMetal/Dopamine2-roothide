@@ -39,7 +39,7 @@ func generateSegmentLoadCommands(infoA: MachOMergeData, infoB: MachOMergeData, r
             }
             
             slc.fileoff = 0
-            slc.maxprot = VM_PROT_READ | VM_PROT_EXECUTE
+            slc.maxprot = VM_PROT_READ | VM_PROT_EXECUTE | VM_PROT_EXECUTE
             slc.initprot = VM_PROT_READ | VM_PROT_EXECUTE
         } else {
             slc.vmaddr = base

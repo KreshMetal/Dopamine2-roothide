@@ -1,6 +1,5 @@
 #define ENABLE_LOGS
 
-#ifdef ENABLE_LOGS
 #include <unistd.h>
 #include <stdbool.h>
 
@@ -16,8 +15,3 @@ void JBLogFunction(const char* path, pid_t pid, uint64_t tid, const char* prefix
 
 #define JBLogDebug(...) do { if(true) JBLogDebugFunction(__VA_ARGS__); } while(0)
 #define JBLogError(...) do { if(true) JBLogErrorFunction(__VA_ARGS__); } while(0)
-
-#else
-#define JBLogDebug(...)
-#define JBLogError(...)
-#endif

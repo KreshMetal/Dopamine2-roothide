@@ -168,12 +168,12 @@ bool dyld_patch_enabled()
 
 int roothide_patch_proc(pid_t pid)
 {
-    if(!dyld_patch_enabled()) {
-        if(!process_force_dyld_patch(proc_get_path(pid,NULL), NULL)) {
-            return proc_patch_csflags(pid);
-        }
-    }
-    return proc_patch_dyld(pid);
+    //if(!dyld_patch_enabled()) {
+    //    if(!process_force_dyld_patch(proc_get_path(pid,NULL), NULL)) {
+    //        return proc_patch_csflags(pid);
+    //    }
+    //}
+    //return proc_patch_dyld(pid);
 }
 
 int roothide_config_set_spinlock_fix(bool enabled)
